@@ -1,5 +1,8 @@
 package algorithm.queue;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 /**
  * 写一个 RecentCounter 类来计算最近的请求。
  * <p>
@@ -12,5 +15,17 @@ package algorithm.queue;
  * 保证每次对 ping 的调用都使用比之前更大的 t 值。
  */
 public class RecentCounter {
+    Queue<Integer> queue;
+    public RecentCounter() {
+        queue = new ArrayDeque<>();
+    }
+
+    public int ping(int t) {
+        queue.add(t);
+        while (queue.size() != 0 && queue.peek() < t - 3000) {
+            queue.poll();
+        }
+        return queue.size();
+    }
 
 }
