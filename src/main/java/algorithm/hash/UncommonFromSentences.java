@@ -10,12 +10,12 @@ public class UncommonFromSentences {
         String[] aa = A.split(" ");
         String[] bb = B.split(" ");
         Map<String, Integer> map = new HashMap<>();
-        for (String a : aa) {
-            map.merge(a, 1, (x, y) -> x + y);
-        }
-        for (String b : bb) {
-            map.merge(b, 1, (x, y) -> x + y);
-        }
+//        for (String a : aa) {
+//            map.merge(a, 1, (x, y) -> x + y);
+//        }
+//        for (String b : bb) {
+//            map.merge(b, 1, (x, y) -> x + y);
+//        }
         List<String> re = new ArrayList<>();
         for (String key : map.keySet()) {
             if (map.get(key) == 1) {
